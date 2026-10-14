@@ -1,0 +1,65 @@
+{
+ "rig": {
+  "g": 9.81,
+  "m_p": 0.127,
+  "m_c": 0.63,
+  "l": 0.1778,
+  "I_factor": 0.3333333333333333,
+  "K_g": 3.71,
+  "K_m": 0.00767,
+  "K_t": 0.00767,
+  "J_m": 3.9e-07,
+  "r_mp": 0.00635,
+  "R_m": 2.6,
+  "B_f": 5.5,
+  "B_p": 0.005,
+  "F_coul": 0.4,
+  "k_amp": 0.8,
+  "rotor_mass": true,
+  "delay_steps": 1
+ },
+ "rounds": [
+  {
+   "balanced": "1/5",
+   "t_up": 3.82,
+   "x_max_cm": 16.6,
+   "version": "v002",
+   "model": {
+    "m_c": 0.57,
+    "B_f": 2.0,
+    "B_p": 0.002,
+    "F_coul": 0.0,
+    "k_amp": 1.0,
+    "delay_steps": 0
+   }
+  },
+  {
+   "balanced": "5/5",
+   "t_up": 3.31,
+   "x_max_cm": 15.3,
+   "version": "v003",
+   "model": {
+    "m_c": 0.639,
+    "B_f": 5.708,
+    "B_p": 0.005,
+    "F_coul": 0.363,
+    "k_amp": 0.807,
+    "delay_steps": 1
+   }
+  },
+  {
+   "balanced": "5/5",
+   "t_up": 3.18,
+   "x_max_cm": 16.2,
+   "version": "v004",
+   "model": {
+    "m_c": 0.639,
+    "B_f": 5.703,
+    "B_p": 0.005,
+    "F_coul": 0.36,
+    "k_amp": 0.806,
+    "delay_steps": 1
+   }
+  }
+ ]
+}

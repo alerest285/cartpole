@@ -1,0 +1,7 @@
+{
+  "first_launch_auto_swingup": true,
+  "balanced_after_swingup": true,
+  "restart_from_setup": true,
+  "stop_survives_reload": true,
+  "page_errors": []
+}

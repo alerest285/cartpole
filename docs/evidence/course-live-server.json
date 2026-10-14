@@ -1,0 +1,10 @@
+{
+  "refreshed_simulator_tabs": "1",
+  "browser_errors": [],
+  "steps": 6,
+  "live": {
+    "mode": "energy",
+    "armed": true,
+    "phase": "balancing"
+  }
+}

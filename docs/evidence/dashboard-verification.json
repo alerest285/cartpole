@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-14",
+  "python_tests": {"passed": 45, "total": 45, "duration_s": 62.646},
+  "standard_benchmark": {"passed": 49, "total": 49},
+  "presentation_tests": {"passed": 6, "total": 6},
+  "dashboard_browser": "dashboard-browser.json",
+  "fluidity_browser": "fluidity-after.json",
+  "pose_updates_per_second": 58.666666666666664,
+  "drawing_p95_ms": 0.2,
+  "matlab": {"files_statically_checked": 27, "execution_verified": false},
+  "physical_hardware_verified": false
+}

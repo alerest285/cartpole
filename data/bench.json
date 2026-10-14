@@ -1,0 +1,366 @@
+[
+ {
+  "controller": "pid",
+  "start": "tilted",
+  "passed": 7,
+  "of": 7,
+  "t_up_mean": null,
+  "x_max_cm": 8.8,
+  "cases": [
+   {
+    "plant": "model",
+    "ok": true,
+    "t_up": 0.0,
+    "x_max_cm": 8.3
+   },
+   {
+    "plant": "friction -40%",
+    "ok": true,
+    "t_up": 0.0,
+    "x_max_cm": 8.1
+   },
+   {
+    "plant": "friction +60%",
+    "ok": true,
+    "t_up": 0.0,
+    "x_max_cm": 8.7
+   },
+   {
+    "plant": "gain -10%",
+    "ok": true,
+    "t_up": 0.0,
+    "x_max_cm": 8.8
+   },
+   {
+    "plant": "gain +10%",
+    "ok": true,
+    "t_up": 0.0,
+    "x_max_cm": 8.0
+   },
+   {
+    "plant": "delay 2 ms",
+    "ok": true,
+    "t_up": 0.0,
+    "x_max_cm": 8.3
+   },
+   {
+    "plant": "coulomb 0.3 N",
+    "ok": true,
+    "t_up": 0.0,
+    "x_max_cm": 7.9
+   }
+  ]
+ },
+ {
+  "controller": "statefb method=place",
+  "start": "tilted",
+  "passed": 7,
+  "of": 7,
+  "t_up_mean": null,
+  "x_max_cm": 8.5,
+  "cases": [
+   {
+    "plant": "model",
+    "ok": true,
+    "t_up": 0.0,
+    "x_max_cm": 7.9
+   },
+   {
+    "plant": "friction -40%",
+    "ok": true,
+    "t_up": 0.0,
+    "x_max_cm": 7.8
+   },
+   {
+    "plant": "friction +60%",
+    "ok": true,
+    "t_up": 0.0,
+    "x_max_cm": 8.1
+   },
+   {
+    "plant": "gain -10%",
+    "ok": true,
+    "t_up": 0.0,
+    "x_max_cm": 8.3
+   },
+   {
+    "plant": "gain +10%",
+    "ok": true,
+    "t_up": 0.0,
+    "x_max_cm": 7.6
+   },
+   {
+    "plant": "delay 2 ms",
+    "ok": true,
+    "t_up": 0.0,
+    "x_max_cm": 7.9
+   },
+   {
+    "plant": "coulomb 0.3 N",
+    "ok": true,
+    "t_up": 0.0,
+    "x_max_cm": 8.5
+   }
+  ]
+ },
+ {
+  "controller": "statefb method=lqr",
+  "start": "tilted",
+  "passed": 7,
+  "of": 7,
+  "t_up_mean": null,
+  "x_max_cm": 8.8,
+  "cases": [
+   {
+    "plant": "model",
+    "ok": true,
+    "t_up": 0.0,
+    "x_max_cm": 8.4
+   },
+   {
+    "plant": "friction -40%",
+    "ok": true,
+    "t_up": 0.0,
+    "x_max_cm": 8.2
+   },
+   {
+    "plant": "friction +60%",
+    "ok": true,
+    "t_up": 0.0,
+    "x_max_cm": 8.7
+   },
+   {
+    "plant": "gain -10%",
+    "ok": true,
+    "t_up": 0.0,
+    "x_max_cm": 8.8
+   },
+   {
+    "plant": "gain +10%",
+    "ok": true,
+    "t_up": 0.0,
+    "x_max_cm": 8.1
+   },
+   {
+    "plant": "delay 2 ms",
+    "ok": true,
+    "t_up": 0.0,
+    "x_max_cm": 8.4
+   },
+   {
+    "plant": "coulomb 0.3 N",
+    "ok": true,
+    "t_up": 0.0,
+    "x_max_cm": 8.1
+   }
+  ]
+ },
+ {
+  "controller": "energy",
+  "start": "hanging",
+  "passed": 7,
+  "of": 7,
+  "t_up_mean": 2.55,
+  "x_max_cm": 17.0,
+  "cases": [
+   {
+    "plant": "model",
+    "ok": true,
+    "t_up": 2.844,
+    "x_max_cm": 16.9
+   },
+   {
+    "plant": "friction -40%",
+    "ok": true,
+    "t_up": 2.02,
+    "x_max_cm": 17.0
+   },
+   {
+    "plant": "friction +60%",
+    "ok": true,
+    "t_up": 2.644,
+    "x_max_cm": 16.0
+   },
+   {
+    "plant": "gain -10%",
+    "ok": true,
+    "t_up": 2.71,
+    "x_max_cm": 16.1
+   },
+   {
+    "plant": "gain +10%",
+    "ok": true,
+    "t_up": 2.0020000000000002,
+    "x_max_cm": 17.0
+   },
+   {
+    "plant": "delay 2 ms",
+    "ok": true,
+    "t_up": 2.86,
+    "x_max_cm": 16.9
+   },
+   {
+    "plant": "coulomb 0.3 N",
+    "ok": true,
+    "t_up": 2.736,
+    "x_max_cm": 16.4
+   }
+  ]
+ },
+ {
+  "controller": "sine",
+  "start": "hanging",
+  "passed": 7,
+  "of": 7,
+  "t_up_mean": 2.74,
+  "x_max_cm": 17.1,
+  "cases": [
+   {
+    "plant": "model",
+    "ok": true,
+    "t_up": 2.704,
+    "x_max_cm": 17.0
+   },
+   {
+    "plant": "friction -40%",
+    "ok": true,
+    "t_up": 2.104,
+    "x_max_cm": 17.1
+   },
+   {
+    "plant": "friction +60%",
+    "ok": true,
+    "t_up": 3.466,
+    "x_max_cm": 16.7
+   },
+   {
+    "plant": "gain -10%",
+    "ok": true,
+    "t_up": 3.496,
+    "x_max_cm": 16.8
+   },
+   {
+    "plant": "gain +10%",
+    "ok": true,
+    "t_up": 1.996,
+    "x_max_cm": 16.4
+   },
+   {
+    "plant": "delay 2 ms",
+    "ok": true,
+    "t_up": 2.722,
+    "x_max_cm": 17.1
+   },
+   {
+    "plant": "coulomb 0.3 N",
+    "ok": true,
+    "t_up": 2.664,
+    "x_max_cm": 16.4
+   }
+  ]
+ },
+ {
+  "controller": "ppo",
+  "start": "hanging",
+  "passed": 7,
+  "of": 7,
+  "t_up_mean": 1.85,
+  "x_max_cm": 16.1,
+  "cases": [
+   {
+    "plant": "model",
+    "ok": true,
+    "t_up": 1.842,
+    "x_max_cm": 15.6
+   },
+   {
+    "plant": "friction -40%",
+    "ok": true,
+    "t_up": 1.8820000000000001,
+    "x_max_cm": 16.1
+   },
+   {
+    "plant": "friction +60%",
+    "ok": true,
+    "t_up": 1.812,
+    "x_max_cm": 15.0
+   },
+   {
+    "plant": "gain -10%",
+    "ok": true,
+    "t_up": 1.828,
+    "x_max_cm": 15.2
+   },
+   {
+    "plant": "gain +10%",
+    "ok": true,
+    "t_up": 1.866,
+    "x_max_cm": 16.0
+   },
+   {
+    "plant": "delay 2 ms",
+    "ok": true,
+    "t_up": 1.86,
+    "x_max_cm": 15.7
+   },
+   {
+    "plant": "coulomb 0.3 N",
+    "ok": true,
+    "t_up": 1.832,
+    "x_max_cm": 15.4
+   }
+  ]
+ },
+ {
+  "controller": "ppo catch=True",
+  "start": "hanging",
+  "passed": 7,
+  "of": 7,
+  "t_up_mean": 1.85,
+  "x_max_cm": 16.1,
+  "cases": [
+   {
+    "plant": "model",
+    "ok": true,
+    "t_up": 1.848,
+    "x_max_cm": 15.6
+   },
+   {
+    "plant": "friction -40%",
+    "ok": true,
+    "t_up": 1.8900000000000001,
+    "x_max_cm": 16.1
+   },
+   {
+    "plant": "friction +60%",
+    "ok": true,
+    "t_up": 1.818,
+    "x_max_cm": 15.0
+   },
+   {
+    "plant": "gain -10%",
+    "ok": true,
+    "t_up": 1.828,
+    "x_max_cm": 15.2
+   },
+   {
+    "plant": "gain +10%",
+    "ok": true,
+    "t_up": 1.8760000000000001,
+    "x_max_cm": 16.0
+   },
+   {
+    "plant": "delay 2 ms",
+    "ok": true,
+    "t_up": 1.866,
+    "x_max_cm": 15.7
+   },
+   {
+    "plant": "coulomb 0.3 N",
+    "ok": true,
+    "t_up": 1.838,
+    "x_max_cm": 15.4
+   }
+  ]
+ }
+]

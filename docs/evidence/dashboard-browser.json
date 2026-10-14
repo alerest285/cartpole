@@ -1,0 +1,18 @@
+{
+  "overview_and_live_scene": true,
+  "course_sections": 6,
+  "pdfs_and_bundle": true,
+  "stop_and_notes_survive_reload": true,
+  "csv_friction_and_saved_run": true,
+  "imports_default_simulated": true,
+  "model_not_auto_applied": true,
+  "offline_modeling_job": true,
+  "controller_selection_stays_disarmed": true,
+  "bad_csv_rejected": true,
+  "responsive_widths": [
+    390,
+    800,
+    1440
+  ],
+  "page_errors": []
+}

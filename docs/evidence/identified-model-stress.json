@@ -1,0 +1,327 @@
+[
+  {
+    "controller": "energy",
+    "params": {},
+    "voltage_cap": 10,
+    "passed": 1,
+    "total": 1,
+    "score": 20.40656132601792,
+    "cases": [
+      {
+        "T": 11.998000000000001,
+        "fault": null,
+        "t_upright": 2.844,
+        "balanced_at_end": true,
+        "max_abs_x_cm": 16.911546647652877,
+        "end_abs_alpha_deg": 0.030048622564658387,
+        "rms_alpha_end_deg": 0.02728058930582206,
+        "max_abs_v": 10.0,
+        "name": "nominal",
+        "voltage_rms": 0.3133670932692642,
+        "saturation_fraction": 0.0045,
+        "clamp_fraction": 0.09933333333333333,
+        "final_cart_rms_cm": 0.024280491826512606
+      }
+    ]
+  },
+  {
+    "controller": "energy",
+    "params": {},
+    "voltage_cap": 10,
+    "passed": 0,
+    "total": 1,
+    "score": 1040.1692340504906,
+    "cases": [
+      {
+        "T": 11.998000000000001,
+        "fault": null,
+        "t_upright": null,
+        "balanced_at_end": false,
+        "max_abs_x_cm": 16.666727546502617,
+        "end_abs_alpha_deg": 46.57586091600949,
+        "rms_alpha_end_deg": 98.0782338514852,
+        "max_abs_v": 10.0,
+        "name": "combined-314-00",
+        "voltage_rms": 3.0196516939388145,
+        "saturation_fraction": 0.006333333333333333,
+        "clamp_fraction": 0.15833333333333333,
+        "final_cart_rms_cm": 5.463203116110162
+      }
+    ]
+  },
+  {
+    "controller": "energy",
+    "params": {},
+    "voltage_cap": 10,
+    "passed": 1,
+    "total": 1,
+    "score": 23.52323954419374,
+    "cases": [
+      {
+        "T": 11.998000000000001,
+        "fault": null,
+        "t_upright": 3.446,
+        "balanced_at_end": true,
+        "max_abs_x_cm": 16.566984697831526,
+        "end_abs_alpha_deg": 0.13577645756114226,
+        "rms_alpha_end_deg": 0.11814491792123469,
+        "max_abs_v": 10.0,
+        "name": "combined-314-01",
+        "voltage_rms": 0.47005874192868785,
+        "saturation_fraction": 0.0065,
+        "clamp_fraction": 0.12366666666666666,
+        "final_cart_rms_cm": 2.5701373625048363
+      }
+    ]
+  },
+  {
+    "controller": "energy",
+    "params": {},
+    "voltage_cap": 10,
+    "passed": 1,
+    "total": 1,
+    "score": 20.437511728841354,
+    "cases": [
+      {
+        "T": 11.998000000000001,
+        "fault": null,
+        "t_upright": 2.064,
+        "balanced_at_end": true,
+        "max_abs_x_cm": 16.90248150511095,
+        "end_abs_alpha_deg": 0.08291015816297971,
+        "rms_alpha_end_deg": 0.07225843338646067,
+        "max_abs_v": 10.0,
+        "name": "combined-314-02",
+        "voltage_rms": 0.33175930606458137,
+        "saturation_fraction": 0.006166666666666667,
+        "clamp_fraction": 0.14433333333333334,
+        "final_cart_rms_cm": 0.8075116116012431
+      }
+    ]
+  },
+  {
+    "controller": "energy",
+    "params": {},
+    "voltage_cap": 10,
+    "passed": 1,
+    "total": 1,
+    "score": 23.81355875007493,
+    "cases": [
+      {
+        "T": 11.998000000000001,
+        "fault": null,
+        "t_upright": 2.726,
+        "balanced_at_end": true,
+        "max_abs_x_cm": 16.642551559622166,
+        "end_abs_alpha_deg": 0.044182354229920916,
+        "rms_alpha_end_deg": 0.1507632021721124,
+        "max_abs_v": 10.0,
+        "name": "combined-314-03",
+        "voltage_rms": 0.48720320263854017,
+        "saturation_fraction": 0.010333333333333333,
+        "clamp_fraction": 0.093,
+        "final_cart_rms_cm": 3.470600785175683
+      }
+    ]
+  },
+  {
+    "controller": "energy",
+    "params": {},
+    "voltage_cap": 10,
+    "passed": 1,
+    "total": 1,
+    "score": 21.241039945822585,
+    "cases": [
+      {
+        "T": 11.998000000000001,
+        "fault": null,
+        "t_upright": 2.0180000000000002,
+        "balanced_at_end": true,
+        "max_abs_x_cm": 17.17241557266058,
+        "end_abs_alpha_deg": 0.06597785220488638,
+        "rms_alpha_end_deg": 0.05576392322075259,
+        "max_abs_v": 10.0,
+        "name": "combined-314-04",
+        "voltage_rms": 0.36121178415481514,
+        "saturation_fraction": 0.006166666666666667,
+        "clamp_fraction": 0.115,
+        "final_cart_rms_cm": 1.3282008048523757
+      }
+    ]
+  },
+  {
+    "controller": "energy",
+    "params": {},
+    "voltage_cap": 10,
+    "passed": 1,
+    "total": 1,
+    "score": 21.92865557945253,
+    "cases": [
+      {
+        "T": 11.998000000000001,
+        "fault": null,
+        "t_upright": 2.7960000000000003,
+        "balanced_at_end": true,
+        "max_abs_x_cm": 16.661309957474753,
+        "end_abs_alpha_deg": 0.20891984309396708,
+        "rms_alpha_end_deg": 0.12400082014698481,
+        "max_abs_v": 10.0,
+        "name": "combined-314-05",
+        "voltage_rms": 0.5879256071597694,
+        "saturation_fraction": 0.012666666666666666,
+        "clamp_fraction": 0.0875,
+        "final_cart_rms_cm": 1.2954944076582386
+      }
+    ]
+  },
+  {
+    "controller": "energy",
+    "params": {},
+    "voltage_cap": 10,
+    "passed": 1,
+    "total": 1,
+    "score": 21.570736054657413,
+    "cases": [
+      {
+        "T": 11.998000000000001,
+        "fault": null,
+        "t_upright": 2.646,
+        "balanced_at_end": true,
+        "max_abs_x_cm": 16.512031254112504,
+        "end_abs_alpha_deg": 0.22964580650137426,
+        "rms_alpha_end_deg": 0.1340031397984733,
+        "max_abs_v": 10.0,
+        "name": "combined-314-06",
+        "voltage_rms": 0.5267682939244326,
+        "saturation_fraction": 0.008166666666666666,
+        "clamp_fraction": 0.1,
+        "final_cart_rms_cm": 1.359168212696043
+      }
+    ]
+  },
+  {
+    "controller": "energy",
+    "params": {},
+    "voltage_cap": 10,
+    "passed": 1,
+    "total": 1,
+    "score": 23.445784342374544,
+    "cases": [
+      {
+        "T": 11.998000000000001,
+        "fault": null,
+        "t_upright": 1.996,
+        "balanced_at_end": true,
+        "max_abs_x_cm": 17.016863219955344,
+        "end_abs_alpha_deg": 0.15278379639053935,
+        "rms_alpha_end_deg": 0.09006344731691664,
+        "max_abs_v": 10.0,
+        "name": "combined-314-07",
+        "voltage_rms": 0.40963292340460383,
+        "saturation_fraction": 0.004,
+        "clamp_fraction": 0.12266666666666666,
+        "final_cart_rms_cm": 3.6136552756099936
+      }
+    ]
+  },
+  {
+    "controller": "energy",
+    "params": {},
+    "voltage_cap": 10,
+    "passed": 1,
+    "total": 1,
+    "score": 20.511134788798387,
+    "cases": [
+      {
+        "T": 11.998000000000001,
+        "fault": null,
+        "t_upright": 2.754,
+        "balanced_at_end": true,
+        "max_abs_x_cm": 16.454120093095675,
+        "end_abs_alpha_deg": 0.09544306803833946,
+        "rms_alpha_end_deg": 0.04564125498595191,
+        "max_abs_v": 10.0,
+        "name": "combined-314-08",
+        "voltage_rms": 0.3904494769451863,
+        "saturation_fraction": 0.0185,
+        "clamp_fraction": 0.07066666666666667,
+        "final_cart_rms_cm": 0.5221157418123403
+      }
+    ]
+  },
+  {
+    "controller": "energy",
+    "params": {},
+    "voltage_cap": 10,
+    "passed": 1,
+    "total": 1,
+    "score": 22.82442115922236,
+    "cases": [
+      {
+        "T": 11.998000000000001,
+        "fault": null,
+        "t_upright": 2.0180000000000002,
+        "balanced_at_end": true,
+        "max_abs_x_cm": 17.194143504385384,
+        "end_abs_alpha_deg": 0.03786380655805292,
+        "rms_alpha_end_deg": 0.04153343358638246,
+        "max_abs_v": 10.0,
+        "name": "combined-314-09",
+        "voltage_rms": 0.4951124573865707,
+        "saturation_fraction": 0.020666666666666667,
+        "clamp_fraction": 0.2768333333333333,
+        "final_cart_rms_cm": 2.6220527400638343
+      }
+    ]
+  },
+  {
+    "controller": "energy",
+    "params": {},
+    "voltage_cap": 10,
+    "passed": 0,
+    "total": 1,
+    "score": 1041.4923897957513,
+    "cases": [
+      {
+        "T": 11.998000000000001,
+        "fault": null,
+        "t_upright": 3.356,
+        "balanced_at_end": false,
+        "max_abs_x_cm": 16.852096422210305,
+        "end_abs_alpha_deg": 152.60915165093283,
+        "rms_alpha_end_deg": 79.10672084730965,
+        "max_abs_v": 10.0,
+        "name": "combined-314-10",
+        "voltage_rms": 3.371847814399541,
+        "saturation_fraction": 0.034166666666666665,
+        "clamp_fraction": 0.5663333333333334,
+        "final_cart_rms_cm": 14.54059774474204
+      }
+    ]
+  },
+  {
+    "controller": "energy",
+    "params": {},
+    "voltage_cap": 10,
+    "passed": 0,
+    "total": 1,
+    "score": 1040.5560004527558,
+    "cases": [
+      {
+        "T": 11.998000000000001,
+        "fault": null,
+        "t_upright": null,
+        "balanced_at_end": false,
+        "max_abs_x_cm": 16.73709858443844,
+        "end_abs_alpha_deg": 47.38010578925672,
+        "rms_alpha_end_deg": 90.7462392128597,
+        "max_abs_v": 10.0,
+        "name": "combined-314-11",
+        "voltage_rms": 3.099071656518236,
+        "saturation_fraction": 0.012666666666666666,
+        "clamp_fraction": 0.2415,
+        "final_cart_rms_cm": 5.620758555280838
+      }
+    ]
+  }
+]

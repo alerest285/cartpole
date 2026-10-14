@@ -1,0 +1,12 @@
+{
+  "title": "Mission Impossible · CartPole 4.0",
+  "note": "Software coverage and preparation. Real-rig experiments and TA sign-off remain pending. MATLAB sources require execution on a licensed installation.",
+  "steps": [
+    {"title":"1 · Model and compare", "detail":"Nonlinear dynamics, motor/back-EMF, viscous friction, signs and encoders. The 5 V / 10 Hz input is available in Method.", "commands":["MATLAB: course_modeling", "Simulink: build_cartpole_simulink('sine_test')"], "pending":"Record the same input on the rig and compare the traces."},
+    {"title":"2 · Measure friction", "detail":"Scalar B_f regression plus a Coulomb comparison. Separate estimation and validation segments; weak or poorly excited fits are rejected.", "commands":["MATLAB after regression.slx: estimate_friction", "Python CSV: python -m cartpole friction recording.csv"], "pending":"Collect 20–30 seconds of varied motion in both directions. Friction values are still priors until then."},
+    {"title":"3 · PID balance", "detail":"Two filtered PID loops, inactive-integrator reset and saturation anti-windup. Position gains follow the course's sign convention.", "commands":["Method: PID (two loops)", "Simulink builder: build_course_models"], "pending":"Lift the pole upright, verify the catch at reduced voltage, then test a small disturbance."},
+    {"title":"4 · State feedback", "detail":"A/B/C/D, controllability and observability, pole placement, continuous/discrete LQR and Q/R comparison. LQR is the first-session baseline.", "commands":["Method: State feedback (LQR / poles)", "MATLAB: design_gains; course_modeling"], "pending":"Confirm signs, loop timing and balance before tuning faster poles or larger gains."},
+    {"title":"5 · Swing-up", "detail":"Mouse/keys with LQR catch, fixed/phase-locked sine and energy control. All share voltage limits and the track filter.", "commands":["Method: Swing-up: mouse / keys + LQR", "Method: Swing-up: energy (Lyapunov)"], "pending":"Identify the rig, validate the fitted model, establish balance, then attempt swing-up. Broad combined uncertainty still causes failures."},
+    {"title":"6 · Playground", "detail":"Show reference, PPO, iterative learning, sampling MPC, a 10 cm barrier exercise and Kalman estimation. ILC/MPC are offline experiments.", "commands":["python -m cartpole playground", "MATLAB: course_barrier([x; x_dot], desired_V)"], "pending":"Hardware exploration follows reliable deterministic control; optional demos are not hardware-qualified."}
+  ]
+}

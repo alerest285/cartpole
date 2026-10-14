@@ -1,0 +1,7 @@
+{
+  "energy_alpha_deg": 1.9935521533689195e-05,
+  "ppo_alpha_deg": -0.08773055051816485,
+  "stopped_at_zero_volts": true,
+  "page_errors": [],
+  "simulation_only": true
+}

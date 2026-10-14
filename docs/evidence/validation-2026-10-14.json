@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-14",
+  "python_tests": {
+    "passed": 31,
+    "total": 31,
+    "duration_s": 64.339
+  },
+  "benchmark": {
+    "passed": 49,
+    "total": 49
+  },
+  "fake_probe": {
+    "passed": true,
+    "mean_period_ms": 2.0,
+    "max_period_ms": 2.02
+  },
+  "matlab": {
+    "installed": "R2024b",
+    "files_analyzed": 20,
+    "analyzer_diagnostics": 0,
+    "executed": false,
+    "blocker": "License Manager Error -1,359: missing license file"
+  },
+  "hardware_executed": false,
+  "policy": "v002",
+  "demo_browser_checks": "passed"
+}

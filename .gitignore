@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.pyc
+runs/
+data/job_progress.jsonl
+data/job_stderr.log
+data/job_stdout.log
+data/friction_latest.json
+data/imports/
+data/train_*.jsonl
+data/policies/checkpoint.npz
+dist/
+matlab-startup.log
+matlab/results/
+matlab/generated/*.slxc
+matlab/generated/slprj/

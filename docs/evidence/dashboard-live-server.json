@@ -1,0 +1,11 @@
+{
+  "url": "http://127.0.0.1:8000/#dashboard",
+  "browser_errors": [],
+  "refreshed_tabs": "1",
+  "browser_refresh_error": "",
+  "live": {
+    "mode": "energy",
+    "armed": true,
+    "phase": "balancing"
+  }
+}

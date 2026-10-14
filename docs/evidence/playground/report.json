@@ -1,0 +1,86 @@
+{
+  "source": "simulation only",
+  "hardware_qualified": false,
+  "show": {
+    "T": 11.998000000000001,
+    "fault": null,
+    "t_upright": 0.0,
+    "balanced_at_end": true,
+    "max_abs_x_cm": 2.335459385089261,
+    "end_abs_alpha_deg": 0.018729970151807152,
+    "rms_alpha_end_deg": 0.05414438926751926,
+    "max_abs_v": 1.651297666033083
+  },
+  "ilc": [
+    {
+      "trial": 0,
+      "rms_cm": 0.7273350711181233,
+      "T": 5.998,
+      "fault": null,
+      "t_upright": 0.0,
+      "balanced_at_end": true,
+      "max_abs_x_cm": 3.4946782041865654,
+      "end_abs_alpha_deg": 0.0995074459291639,
+      "rms_alpha_end_deg": 0.092991140031336,
+      "max_abs_v": 1.2312707512499041
+    },
+    {
+      "trial": 1,
+      "rms_cm": 0.5709286399372888,
+      "T": 5.998,
+      "fault": null,
+      "t_upright": 0.0,
+      "balanced_at_end": true,
+      "max_abs_x_cm": 3.421499277717758,
+      "end_abs_alpha_deg": 0.05750446517421268,
+      "rms_alpha_end_deg": 0.07612414691641987,
+      "max_abs_v": 1.2013835532183978
+    },
+    {
+      "trial": 2,
+      "rms_cm": 0.4674308725880992,
+      "T": 5.998,
+      "fault": null,
+      "t_upright": 0.0,
+      "balanced_at_end": true,
+      "max_abs_x_cm": 3.240940722538515,
+      "end_abs_alpha_deg": 0.13022491081522763,
+      "rms_alpha_end_deg": 0.07752816708099504,
+      "max_abs_v": 1.2706959827197464
+    },
+    {
+      "trial": 3,
+      "rms_cm": 0.4409015429166527,
+      "T": 5.998,
+      "fault": null,
+      "t_upright": 0.0,
+      "balanced_at_end": true,
+      "max_abs_x_cm": 3.1803265137855536,
+      "end_abs_alpha_deg": 0.038932929601935826,
+      "rms_alpha_end_deg": 0.11119220869957923,
+      "max_abs_v": 1.1903052152686593
+    },
+    {
+      "trial": 4,
+      "rms_cm": 0.48443602630773264,
+      "T": 5.998,
+      "fault": null,
+      "t_upright": 0.0,
+      "balanced_at_end": true,
+      "max_abs_x_cm": 3.24030722489579,
+      "end_abs_alpha_deg": 0.05062777859310207,
+      "rms_alpha_end_deg": 0.11319465390746562,
+      "max_abs_v": 1.1081922520556342
+    }
+  ],
+  "mpc": {
+    "T": 7.998,
+    "fault": null,
+    "t_upright": 0.0,
+    "balanced_at_end": true,
+    "max_abs_x_cm": 4.509660701562203,
+    "end_abs_alpha_deg": 0.07179902303867579,
+    "rms_alpha_end_deg": 0.14955407192183742,
+    "max_abs_v": 3.135041144068003
+  }
+}

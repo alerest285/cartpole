@@ -1,0 +1,19 @@
+{
+  "frames": 391,
+  "swing_seconds": 3,
+  "pose_updates_per_second": 58.666666666666664,
+  "plot_updates_per_second": 58.666666666666664,
+  "frame_p95_ms": 0.20000000298023224,
+  "buffer_lag_median_ms": 50.4054099748692,
+  "first_launch_auto_demo": true,
+  "restart_from_setup": true,
+  "balanced_after_swingup": true,
+  "reset_without_fictitious_swing": true,
+  "stop_survives_reload": true,
+  "course_guide_and_original_pdf": true,
+  "derivative_cutoff_tuning": true,
+  "manual_pad_stops_when_motion_stops": true,
+  "resize_mobile_tabs_and_theme": true,
+  "lost_telemetry_freezes_display": true,
+  "page_errors": []
+}

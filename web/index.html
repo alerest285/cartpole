@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cart-Pole Lab Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+<header class="bar">
+  <div class="brand">cart-pole <span class="dim">lab</span></div>
+  <nav class="workspace-nav" aria-label="Workspace"><button id="show-dashboard" class="on">Dashboard</button><button id="show-console">Control room</button></nav>
+  <div id="backend" class="pill">connecting…</div>
+  <div id="armstate" class="pill">disarmed</div>
+  <div id="fault" class="fault" hidden></div>
+  <div class="spacer"></div>
+  <div class="readout"><span class="lbl">x</span><span id="r-x" class="num">—</span><span class="unit">cm</span></div>
+  <div class="readout"><span class="lbl">α</span><span id="r-a" class="num">—</span><span class="unit">°</span></div>
+  <div class="readout"><span class="lbl">V</span><span id="r-v" class="num">—</span></div>
+  <button id="demo" class="btn primary" hidden title="Reset the simulated cart and run energy swing-up with the default settings">Run demo</button>
+  <button id="arm" class="btn" title="Run the selected controller">Arm</button>
+  <button id="stop" class="btn stop" title="Stop (space bar)">STOP<span class="kbd">space</span></button>
+</header>
+
+<section id="dashboard" class="dashboard" aria-label="Lab dashboard">
+  <div class="dashboard-heading"><div><p class="eyebrow">MISSION IMPOSSIBLE / CARTPOLE 4.0</p><h1>From simulation to the rig.</h1><p class="dim">Measure the plant. Establish balance. Then swing up.</p></div><button class="btn" data-doc="tomorrow">First session guide ↗</button></div>
+  <div id="dashboard-notice" class="notice" role="status" aria-live="polite">Connecting to the local controller…</div>
+  <div class="dashboard-hero">
+    <div><div class="section-label"><h2>Live plant</h2><button class="text-button" data-console="control">Controls & plots →</button></div><div id="dashboard-scene"></div></div>
+    <section class="dash-card commissioning"><div class="section-label"><h2>Commissioning sequence</h2><span id="check-count" class="pill">0 / 5 noted</span></div><p class="small-note" id="check-scope"></p><div id="commissioning-steps"></div><p class="small-note">Operator notes only. Checked boxes do not verify the hardware.</p></section>
+  </div>
+  <div id="dashboard-metrics" class="metric-grid"></div>
+  <div class="section-label dashboard-section"><div><p class="eyebrow">IDENTIFY & VALIDATE</p><h2>Friction and the model</h2></div><button class="text-button" data-console="runs">All recordings →</button></div>
+  <div class="dashboard-grid two">
+    <section class="dash-card"><h3>Analyze a recording</h3><p class="small-note">Scalar viscous fit and Coulomb comparison, scored on held-out samples. Analysis uses the current model’s masses and motor gain.</p>
+      <form id="friction-form" class="stack">
+        <label class="field"><span>Saved recording</span><select id="friction-run"><option value="">Upload CSV instead</option></select></label>
+        <div id="upload-fields" class="stack"><label class="field"><span>MATLAB or console CSV · t [s], x [m], alpha [rad], v [V]</span><input id="friction-file" type="file" accept=".csv,text/csv"></label><label class="inline"><input id="upload-hardware" type="checkbox"> This file is an actual physical-rig recording</label></div>
+        <div class="row"><label class="inline">Delay [samples] <input id="friction-delay" type="number" min="0" max="5" value="0"></label><button id="analyze-friction" class="btn primary" type="submit" data-idle>Analyze friction</button><button id="import-recording" class="btn" type="button" data-idle>Import CSV to runs</button></div>
+        <p class="small-note idle-hint">Stop the controller before analysis or import. Uploads default to simulation.</p>
+      </form><div id="friction-result" class="analysis-result" aria-live="polite"><p class="dim">Choose a recording to estimate friction. The result does not replace your plant model.</p></div>
+    </section>
+    <section class="dash-card"><div class="section-label"><h3>Model & transfer</h3><span id="model-label" class="pill">waiting</span></div><dl id="dashboard-plant" class="values"></dl><p id="dashboard-fit" class="small-note"></p><div class="row"><button class="btn" data-console="learn">Joint system identification →</button><button class="btn" data-console="runs">Review / apply fit →</button></div><div class="card-divider"></div><h3>MATLAB / QUARC</h3><p class="small-note">Eight course model builders, shared model parameters and controller references. Local MATLAB execution is pending license activation; QUARC compilation is still required on the lab PC.</p><div class="row"><button class="btn" data-job="export_matlab" data-idle>Export current model</button><button class="btn" data-doc="matlab">MATLAB guide ↗</button></div><div class="command">validate_course<br>course_modeling<br>build_course_models</div></section>
+  </div>
+  <div class="section-label dashboard-section"><div><p class="eyebrow">SIX COURSE SECTIONS</p><h2>The complete workspace</h2></div><button class="text-button" data-doc="tasks">Task map & derivations ↗</button></div>
+  <div id="dashboard-course" class="dashboard-grid three"></div>
+  <div class="section-label dashboard-section"><div><p class="eyebrow">SIMULATION EVIDENCE</p><h2>Test, tune, compare</h2></div><button id="refresh-dashboard" class="text-button">Refresh results ↻</button></div>
+  <div class="dashboard-grid two">
+    <section class="dash-card"><h3>Controller benchmark</h3><p class="small-note">Standard seven-plant comparison. These are simulation results.</p><div class="table-scroll"><table class="tbl" id="dashboard-bench"><thead><tr><th>Controller</th><th>Pass</th><th>Swing-up</th><th>Max travel</th></tr></thead><tbody></tbody></table></div><button class="btn" data-job="bench" data-idle>Run benchmark</button></section>
+    <section class="dash-card"><h3>Uncertainty & identification</h3><div id="dashboard-evidence"></div><div class="row"><button class="btn" data-job="tune" data-idle>Run uncertainty sweep</button><button class="btn" data-job="rehearsal" data-idle>Rehearse identification</button></div><p class="small-note">Offline jobs run one at a time. Tuning reports propose settings; they do not install them.</p></section>
+  </div>
+  <section class="dash-card dashboard-section"><div class="section-label"><h2>Offline jobs</h2><span id="dashboard-job-state" class="pill">idle</span></div><div class="row"><button class="btn" data-job="modeling" data-idle>Model & Q/R experiments</button><button class="btn" data-job="playground" data-idle>Show / ILC / MPC</button><button class="btn" data-console="learn">PPO training →</button><button class="btn" id="dashboard-cancel">Cancel job</button></div><pre id="dashboard-joblog" class="log" aria-live="polite">Job output appears here.</pre></section>
+  <div class="section-label dashboard-section"><div><p class="eyebrow">TAKE IT TO THE LAB</p><h2>Files and procedures</h2></div></div><div id="dashboard-materials" class="dashboard-grid three"></div>
+  <footer class="dashboard-footer">500 Hz control loop · Shared controller and safety path · Physical balance and swing-up remain to be verified at the rig.</footer>
+</section>
+
+<main id="console-view" hidden>
+  <section class="left">
+    <div id="console-scene"></div>
+    <div class="scene-wrap">
+      <canvas id="scene"></canvas>
+      <div id="sim-hint" class="sim-hint" hidden>Ready. Click <b>Run demo</b> to swing the pendulum up and balance it.</div>
+      <div class="scene-tags"><span id="phase" class="tag"></span><span id="mode-tag" class="tag dim"></span></div>
+      <div class="sim-tools" id="sim-tools" hidden>
+        <button class="btn small" id="poke-l">tap ←</button>
+        <button class="btn small" id="poke-r">tap →</button>
+        <button class="btn small" id="reset-hang">reset hanging</button>
+        <button class="btn small" id="reset-up">reset upright</button>
+      </div>
+    </div>
+    <div class="charts">
+      <canvas id="ch-x" class="chart"></canvas>
+      <canvas id="ch-a" class="chart"></canvas>
+      <canvas id="ch-v" class="chart"></canvas>
+    </div>
+  </section>
+
+  <aside class="right">
+    <nav class="tabs">
+      <button data-tab="control" class="on">Control</button>
+      <button data-tab="learn">Learn</button>
+      <button data-tab="runs">Runs</button>
+      <button data-tab="setup">Setup</button>
+      <button data-tab="course">Course</button>
+    </nav>
+
+    <div class="tab" id="tab-control">
+      <label class="field"><span>Method</span><select id="mode"></select></label>
+      <p id="blurb" class="blurb"></p>
+      <div id="info" class="info"></div>
+      <form id="params" class="params" autocomplete="off"></form>
+      <div class="group">
+        <h3>Cart setpoint <span id="xref-v" class="num dim">0.0 cm</span></h3>
+        <input type="range" id="xref" min="-10" max="10" step="0.5" value="0">
+      </div>
+      <div class="group" id="manual-group">
+        <h3>Manual <span class="dim">← → keys, or drag</span> <span id="man-v" class="num dim">0.00</span></h3>
+        <input type="range" id="manual" min="-1" max="1" step="0.01" value="0">
+        <div id="manual-pad" tabindex="0">Drag left / right to drive the cart. Release to zero.</div>
+      </div>
+    </div>
+
+    <div class="tab" id="tab-learn" hidden>
+      <div class="group">
+        <h3>Policies</h3>
+        <table class="tbl" id="pol-table"><thead><tr><th>ver</th><th>sim</th><th>t_up</th><th>rig</th><th>note</th></tr></thead><tbody></tbody></table>
+      </div>
+      <canvas id="ch-learn" class="chart tall"></canvas>
+      <div class="group">
+        <h3>Improve from the rig</h3>
+        <p class="blurb">Refits the model from every hardware run, learns from your exploration episodes, fine-tunes in the refit simulator, promotes only if not worse. Run PPO with <b>explore</b> on for a few episodes first, plus 30 s of <b>Identify</b>.</p>
+        <div class="row">
+          <label class="inline">iters <input type="number" id="imp-iters" value="300" min="20" max="5000" step="20"></label>
+          <label class="inline"><input type="checkbox" id="imp-sim"> include simulator runs</label>
+        </div>
+        <div class="row"><button class="btn primary" id="improve">Improve</button><button class="btn" id="sysid">Sysid only</button><button class="btn" id="cancel">Cancel job</button></div>
+      </div>
+      <div class="group">
+        <h3>Train from scratch</h3>
+        <div class="row">
+          <label class="inline">iters <input type="number" id="tr-iters" value="1500" min="50" max="20000" step="50"></label>
+          <label class="inline">randomisation <input type="number" id="tr-rand" value="1.0" min="0" max="2" step="0.05"></label>
+        </div>
+        <div class="row"><button class="btn" id="train">Train new</button><button class="btn" id="train-warm">Continue current</button></div>
+      </div>
+      <pre id="joblog" class="log"></pre>
+    </div>
+
+    <div class="tab" id="tab-runs" hidden>
+      <div class="group">
+        <h3>Model in use</h3>
+        <div id="fit" class="info"></div>
+        <div class="row"><button class="btn small" id="use-fit">Use sysid fit</button><button class="btn small" id="use-nominal">Use nominal</button></div>
+      </div>
+      <div class="group">
+        <h3>Recorded runs <span class="dim">every armed stretch is saved</span></h3>
+        <table class="tbl" id="runs-table"><thead><tr><th>id</th><th>mode</th><th>s</th><th>end</th><th></th></tr></thead><tbody></tbody></table>
+      </div>
+    </div>
+
+    <div class="tab" id="tab-course" hidden>
+      <a class="btn small course-pdf" href="/course/handout.pdf" target="_blank" rel="noopener">Open course PDF</a>
+      <p class="blurb" id="course-note"></p>
+      <div id="course-steps"></div>
+    </div>
+    <div class="tab" id="tab-setup" hidden>
+      <div class="group">
+        <h3>Hardware</h3>
+        <div id="hw" class="info"></div>
+        <div class="row"><button class="btn" id="zero">Zero encoders</button><button class="btn small" id="clear">Clear fault</button></div>
+        <p class="blurb">Zero only with the cart in the middle of the track and the pole hanging still. Before the first run: <code>python -m cartpole probe --move</code> on the lab PC (docs/lab-runbook.md).</p>
+      </div>
+      <div class="group">
+        <h3>Safety</h3>
+        <form id="safety" class="params"></form>
+      </div>
+      <div class="group">
+        <h3>Estimator</h3>
+        <select id="estimator"><option value="kalman">Kalman (default)</option><option value="derivative">Filtered derivative</option></select>
+        <label class="field"><span>Derivative cutoff [rad/s]</span><input id="derivative-w" type="number" min="10" max="200" step="5" value="60"></label>
+        <p class="blurb">Stop to change the estimator. Cutoff tuning is for the filtered derivative; PPO uses its trained Kalman estimator.</p>
+      </div>
+      <div class="group">
+        <h3>Loop timing</h3>
+        <div id="timing" class="info"></div>
+      </div>
+      <div class="group">
+        <h3>Messages</h3>
+        <pre id="msgs" class="log"></pre>
+      </div>
+    </div>
+  </aside>
+</main>
+<script src="timeline.js"></script>
+<script src="app.js"></script>
+<script src="dashboard.js" defer></script>
+<dialog id="document-dialog"><div class="section-label"><h2 id="document-title"></h2><button class="btn" id="close-document" aria-label="Close document">Close</button></div><article id="document-content"></article></dialog>
+</body>
+</html>

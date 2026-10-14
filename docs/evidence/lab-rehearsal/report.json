@@ -1,0 +1,165 @@
+{
+  "source": "simulation only",
+  "true_plant": {
+    "g": 9.81,
+    "m_p": 0.127,
+    "m_c": 0.6,
+    "l": 0.1778,
+    "I_factor": 0.3333333333333333,
+    "K_g": 3.71,
+    "K_m": 0.00767,
+    "K_t": 0.00767,
+    "J_m": 3.9e-07,
+    "r_mp": 0.00635,
+    "R_m": 2.6,
+    "B_f": 3.3,
+    "B_p": 0.004,
+    "F_coul": 0.15,
+    "k_amp": 0.93,
+    "rotor_mass": true,
+    "delay_steps": 1
+  },
+  "fit": {
+    "n_samples": 12948,
+    "n_pole_samples": 12103,
+    "runs": [
+      "20261014-232501-919"
+    ],
+    "delay_steps": 1,
+    "r2_cart": 0.987,
+    "r2_pole": 0.9961,
+    "raw": {
+      "M_tot": 0.8430595197729941,
+      "k_amp": 0.9073416540645376,
+      "c_v": 10.963655321322623,
+      "F_coul": 0.12074853737354237,
+      "J": 0.005338299967057641,
+      "B_p": 0.003997914770980552
+    },
+    "se": {
+      "M_tot": 0.0012903914263720129,
+      "k_amp": 0.0016006525225965849,
+      "c_v": 0.02041899918586482,
+      "F_coul": 0.0004559086051727955,
+      "J": 3.0461922939247004e-06,
+      "B_p": 2.70540583561654e-05
+    },
+    "validation_r2_cart": 0.9885,
+    "n_validation": 6948,
+    "scaled_condition": 33.5480959868366,
+    "params": {
+      "m_c": 0.5829328783197112,
+      "k_amp": 0.9073416540645376,
+      "B_f": 3.2400913396746605,
+      "F_coul": 0.12074853737354237,
+      "delay_steps": 1,
+      "I_factor": 0.3296451064924213,
+      "B_p": 0.003997914770980552
+    },
+    "problems": [],
+    "time": "2026-10-14T23:25:03"
+  },
+  "scalar_friction_with_known_constants": {
+    "schema": 1,
+    "exercise_dimension": 1,
+    "duration_s": 39.99800000000292,
+    "sample_period_s": 0.0019999999999997797,
+    "n_train": 11941,
+    "n_validation": 6422,
+    "delay_steps_assumed": 1,
+    "models": {
+      "viscous": {
+        "B_f": 4.639932181173071,
+        "F_coul": 0.0,
+        "validation_rmse_N": 0.05916380572594028,
+        "validation_r2": 0.9842326247641853,
+        "scaled_condition": 1.0,
+        "block_estimates": [
+          [
+            4.546597722821781
+          ],
+          [
+            4.588849435412912
+          ],
+          [
+            4.7764271064960075
+          ],
+          [
+            4.882999975439027
+          ],
+          [
+            4.505624203009367
+          ],
+          [
+            4.6851179578052005
+          ]
+        ],
+        "accepted": true,
+        "problems": []
+      },
+      "viscous_coulomb": {
+        "B_f": 3.465313076195073,
+        "F_coul": 0.13023039787100307,
+        "validation_rmse_N": 0.018130714207127276,
+        "validation_r2": 0.9985192660873516,
+        "scaled_condition": 4.520015193784155,
+        "block_estimates": [
+          [
+            3.3297141315296397,
+            0.14615401857920612
+          ],
+          [
+            3.4829728405435074,
+            0.12771442056896273
+          ],
+          [
+            3.633014926690344,
+            0.11391394774815362
+          ],
+          [
+            3.532330417336404,
+            0.12617190408251633
+          ],
+          [
+            3.3913831485517076,
+            0.13806668137191855
+          ],
+          [
+            3.5570989428155357,
+            0.12055621630816853
+          ]
+        ],
+        "accepted": true,
+        "problems": []
+      }
+    },
+    "selected": "viscous_coulomb",
+    "accepted": true,
+    "params": {
+      "B_f": 3.465313076195073,
+      "F_coul": 0.13023039787100307
+    },
+    "note": "Known masses and motor gain assumed. Confirm on a separate run; no parameters installed."
+  },
+  "before_refit": {
+    "T": 11.998000000000001,
+    "fault": null,
+    "t_upright": null,
+    "balanced_at_end": false,
+    "max_abs_x_cm": 14.570006639504522,
+    "end_abs_alpha_deg": 151.54849587217626,
+    "rms_alpha_end_deg": 97.19541490872963,
+    "max_abs_v": 7.615272640915723
+  },
+  "after_refit": {
+    "T": 11.998000000000001,
+    "fault": null,
+    "t_upright": 3.448,
+    "balanced_at_end": true,
+    "max_abs_x_cm": 16.83850075725229,
+    "end_abs_alpha_deg": 0.0321506993111285,
+    "rms_alpha_end_deg": 0.020360134922580105,
+    "max_abs_v": 10.0
+  },
+  "fit_installed_only_in_temporary_directory": true
+}

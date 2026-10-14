@@ -1,0 +1,3 @@
+# Keep the supplied course files byte-for-byte, including their Windows newlines.
+course_original/* -text
+course_original/*.m whitespace=cr-at-eol
